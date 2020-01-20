@@ -12,6 +12,7 @@ class Database{
     public function getConnection(){
 
         $db_connection = null;
+        $string = "host=$this->host dbname=$this->db_name user=$this->username password=$this->password";
 
         try {
             $db_connection = pg_connect("host=$this->host 
@@ -19,7 +20,7 @@ class Database{
             }catch (Exception $e) {
             echo $e->getMessage();
         }
-        echo var_dump($db_connection);
+        echo var_dump($string);
         return $db_connection;
 
     }
