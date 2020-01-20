@@ -26,8 +26,6 @@ class Product{
         $query = "SELECT * FROM comics LIMIT 25";
 
         // prepare query statement
-        $result = pg_query($this->conn, $query);
-
-        return $result;
+        return pg_query($this->conn, $query);
     }
 }
