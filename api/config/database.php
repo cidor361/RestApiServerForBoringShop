@@ -11,14 +11,9 @@ class Database{
     // get the database connection
     public function getConnection(){
 
-        $db_connection = null;
         $string = "host=$this->host dbname=$this->db_name user=$this->username password=$this->password";
+        $db_connection = pg_connect($string);
 
-        try {
-            $db_connection = pg_connect($string);
-            }catch (Exception $e) {
-            echo $e->getMessage();
-        }
         echo var_dump($string);
         echo var_dump($db_connection);
         return $db_connection;
