@@ -19,7 +19,7 @@ class Database{
             }catch (Exception $e) {
             echo $e->getMessage();
         }
-
+        echo var_dump($db_connection);
         return $db_connection;
 
     }
