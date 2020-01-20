@@ -1,6 +1,16 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+
+include_once '../config/database.php';
+include_once '../objects/product.php';
+
 $db = new Database();
 $db->getConnection();
-$product = new Product($db);
-$result = $product->read();
-echo $result;
+$Product = new Product($db);
+$result = $Product->read();
+if ($result==null){
+    echo 'null';
+}else {
+    echo $result;
+}
