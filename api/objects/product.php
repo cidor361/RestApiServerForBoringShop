@@ -20,23 +20,25 @@ class Product{
     }
 
     // read products
-    function read($num = 0){
-        if ($num = 0) {
+    function read($id = 0){
+        if ($id = 0) {
             $query = "SELECT * FROM comics LIMIT 25";
         }else{
-            $query = "SELECT * FROM comics WHERE id=$num";
+            $query = "SELECT * FROM comics WHERE id=$id";
         }
         return pg_query($this->conn, $query);
     }
 
-    function create(){
-        $query = "INSERT INTO $this->table_name(id, name, author, description, price, category_id, category_name) VALUES (id, name, author, description, price, category_id, category_name);";
+    function create($object){
+        $query = "INSERT INTO $this->table_name(id, name, author, category, info) VALUES ($object[id], $object[name], $object[author], $object[author], $object[info]);";
         return pg_query($this->conn, $query);
     }
 
-    function delete(){
-        $query = "DELETE FROM $this->table_name WHERE id = 1;";
+    function delete($id){
+        $query = "DELETE FROM $this->table_name WHERE id = $id;";
         return pg_query($this->conn, $query);
     }
+
+    function search(){}
 
 }
