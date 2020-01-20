@@ -8,20 +8,12 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 include_once '../config/database.php';
 include_once '../objects/product.php';
 
-echo var_dump($_GET['num']);
-echo var_dump($_POST['num']);
-echo var_dump($_REQUEST['num']);
-
-
-
-
-
-$num = 1000000;
+$id = $_REQUEST['num'];
 
 $db = new Database();
 $db_connection = $db->getConnection();
 $Product = new Product($db_connection);
-$result = $Product->read();
+$result = $Product->read($id);
 $resOutput = pg_fetch_all($result);
 if ($resOutput==null){
     echo 'full null';
