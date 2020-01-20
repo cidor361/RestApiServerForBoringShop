@@ -18,5 +18,7 @@ class Database{
             echo $e->getMessage();
         }
 
+        return $db_connection;
+
     }
 }
