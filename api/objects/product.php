@@ -26,11 +26,8 @@ class Product{
         $query = "SELECT * FROM comics LIMIT 10";
 
         // prepare query statement
-        $stmt = $this->conn->prepare($query);
+        $result = pg_query($query, $query);
 
-        // execute query
-        $stmt->execute();
-
-        return $stmt;
+        return $result;
     }
 }
