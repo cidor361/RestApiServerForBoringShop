@@ -11,6 +11,8 @@ class Database{
     // get the database connection
     public function getConnection(){
 
+        $db_connection = null;
+
         try {
             $db_connection = pg_connect("host=$this->host 
             dbname=$this->db_name user=$this->username password=$this->password");
