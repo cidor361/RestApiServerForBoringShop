@@ -21,6 +21,7 @@ class Product{
 
     // read products
     function read($id = 0){
+        $id = 100;
         if ($id = 0) {
             $query = "SELECT * FROM comics LIMIT 25";
         }else{
