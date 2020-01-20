@@ -14,6 +14,7 @@ $db = new Database();
 $db_connection = $db->getConnection();
 $Product = new Product($db_connection);
 $result = $Product->read($id);
+echo var_dump($result);
 $resOutput = pg_fetch_all($result);
 if ($resOutput==null){
     echo 'full null';
