@@ -13,5 +13,5 @@ $resOutput = pg_fetch_all($result);
 if ($resOutput==null){
     echo 'full null';
 }else {
-    echo json_encode($resOutput, JSON_UNESCAPED_UNICODE);
+    echo json_encode($resOutput, JSON_UNESCAPED_UNICODE)[0];
 }
