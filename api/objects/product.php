@@ -30,8 +30,7 @@ class Product{
     }
 
     function create(){
-        $query = "INSERT INTO $this->table_name(id, name, author, description, price, category_id, category_name)
-VALUES (id, name, author, description, price, category_id, category_name);";
+        $query = "INSERT INTO $this->table_name(id, name, author, description, price, category_id, category_name) VALUES (id, name, author, description, price, category_id, category_name);";
         return pg_query($this->conn, $query);
     }
 
