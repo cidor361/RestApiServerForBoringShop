@@ -8,8 +8,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 include_once '../config/database.php';
 include_once '../objects/product.php';
 
-$num = $_GET['num'];
-echo var_dump($num);
+$num = 1000000;
 
 $db = new Database();
 $db_connection = $db->getConnection();
