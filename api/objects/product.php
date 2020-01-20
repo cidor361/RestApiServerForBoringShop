@@ -23,10 +23,10 @@ class Product{
     function read(){
 
         // select all query
-        $query = "SELECT * FROM comics LIMIT 10";
+        $query = "SELECT * FROM comics LIMIT 25";
 
         // prepare query statement
-        $result = pg_query($query, $query);
+        $result = pg_query($this->conn, $query);
 
         return $result;
     }
