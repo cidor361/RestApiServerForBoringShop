@@ -8,7 +8,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 include_once '../config/database.php';
 include_once '../objects/product.php';
 
-$num = $_POST['num'];
+$num = $_GET['num'];
 echo var_dump($num);
 
 $db = new Database();
