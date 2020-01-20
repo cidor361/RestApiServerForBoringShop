@@ -9,8 +9,9 @@ $db = new Database();
 $db_connection = $db->getConnection();
 $Product = new Product($db_connection);
 $result = $Product->read();
-if ($result==null){
+$resOutput = pg_fetch_all($result);
+if ($resOutput==null){
     echo 'full null';
 }else {
-    echo $result;
+    echo $resOutput;
 }
