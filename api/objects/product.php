@@ -25,7 +25,7 @@ class Product{
         if ($id = 0) {
             $query = "SELECT * FROM comics LIMIT 25";
         }else{
-            $query = "SELECT * FROM comics WHERE id=$id";
+            $query = "SELECT * FROM comics WHERE id=".$id;
         }
         return pg_query($this->conn, $query);
     }
