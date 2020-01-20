@@ -20,12 +20,12 @@ class Product{
     }
 
     // read products
-    function read(){
-
-        // select all query
-        $query = "SELECT * FROM comics LIMIT 25";
-
-        // prepare query statement
+    function read($num = 0){
+        if ($num = 0) {
+            $query = "SELECT * FROM comics LIMIT 25";
+        }else{
+            $query = "SELECT * FROM comics WHERE id=$num";
+        }
         return pg_query($this->conn, $query);
     }
 
