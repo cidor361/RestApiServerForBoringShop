@@ -6,11 +6,11 @@ include_once '../config/database.php';
 include_once '../objects/product.php';
 
 $db = new Database();
-$db->getConnection();
-$Product = new Product($db);
+$db_connection = $db->getConnection();
+$Product = new Product($db_connection);
 $result = $Product->read();
 if ($result==null){
-    echo 'null';
+    echo 'full null';
 }else {
     echo $result;
 }
