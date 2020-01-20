@@ -35,4 +35,9 @@ VALUES (id, name, author, description, price, category_id, category_name);";
         return pg_query($this->conn, $query);
     }
 
+    function delete(){
+        $query = "DELETE FROM $this->table_name WHERE id = 1;";
+        return pg_query($this->conn, $query);
+    }
+
 }
