@@ -12,7 +12,8 @@ class Database{
     public function getConnection(){
 
         try {
-            $db_connection = pg_connect("host=$this->host dbname=$this->db_name user=$this->username");
+            $db_connection = pg_connect("host=$this->host 
+            dbname=$this->db_name user=$this->username password=$this->password");
             }catch (Exception $e) {
             echo $e->getMessage();
         }
