@@ -9,7 +9,7 @@ include_once '../config/database.php';
 include_once '../objects/product.php';
 
 $num = $_POST;
-echo $num;
+echo var_dump($num);
 
 $db = new Database();
 $db_connection = $db->getConnection();
